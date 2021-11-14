@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./stylesheets/style.css">   
+
+    <!--not sure about project name yet-->
+    <title>Dime Time</title>
+    <!-- add favicon-->
+</head>
+<body>
+    <!--nav bar begins-->
+    <header class="container">
+        <div id="logo"><img src="./images/piggy.png" alt="logo"/></div>
+        
+        <nav>
+            <ul class="nav_links">
+                <li><a href="./">About</a></li>
+                <li><a href="./resources">Resources</a></li>
+                <li><a href="{{go_to}}">{{login}}</a></li>
+        
+            </ul>
+        </nav>
+    </header>
+<!--nav ends-->
+
+<!--balance display-->
+<center>
+	<div class="money_display">
+		<p>Your Balance: ${{balance}}</p>
+	</div>
+</center>
+	
+<!--banking table-->
+<br>
+<center><h4>Financial History</h4></center>
+
+<center>
+<table>
+	<thead>
+		<tr>
+			<th>⠀ </th>
+			<th>Income History</th>
+			<th>⠀ ⠀ </th>
+			<th>Spending History</th>
+			<th>⠀ </th>
+		</tr>
+	</thead>
+	{{#each info}}
+		<tr>
+			<td>⠀ </td>
+			<td>{{this.earn_msg}}</td>
+			<td>⠀ ⠀ </td>
+			<td>{{this.spend_msg}}</td>
+			<td>⠀ </td>
+		</tr>
+	{{/each}}
+</table>
+</center>
+
+
+
+<div class="linksandsuch">
+    <div class="links">
+        <ul class="linksheader">
+            LINKS
+            <li><a href="./">About</a></li>
+            <li><a href="signup">Join Us</a></li>
+
+        </ul>
+    </div>
+    <div class="contactusinfo">
+        <ul class="Contactusheader">
+            Have Questions?
+            <li><a href="#services">
+                Feel free to contact us anytime at 
+                <br>dimetime@fakemail.com</a></li>
+                <br>
+            <li>* All images from google</li>
+
+        </ul>
+    </div>
+    <!--<div class="hours">
+        <ul class="linksheader">
+            Hours
+            <li>Monday - Friday <br>9am - 5pm</li>
+
+        </ul> -->
+
+</body>
+</html>

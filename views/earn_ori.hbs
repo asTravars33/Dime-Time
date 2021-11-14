@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+    
+    <h2>Earn</h2>
+	
+	{{#each duties}}
+		<div onclick="increment_and_update('{{this.name}}', {{this.gain}})">
+			<p>{{this.name}}</p>
+		</div>
+	{{/each}}
+	
+	<p id="balance_display"></p>
+	<form action="./save_earned" method="get">
+		<input type="text" id="hidden_balance" name="hidden_balance"></input>
+		<input type="text" id="hidden_earnings" name="hidden_earnings"></input>
+		<button type="submit" value="submit">Save</button>
+	</form>
+	
+	<script type="text/javascript" src="./javascripts/duties.js"></script>
+</body>
+</html>

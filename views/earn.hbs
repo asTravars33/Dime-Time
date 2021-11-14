@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./stylesheets/style.css">   
+
+    <!--not sure about project name yet-->
+    <title>Dime Time</title>
+    <!-- add favicon-->
+</head>
+<body>
+    <!--nav bar begins-->
+    <header class="container">
+        <div id="logo"><img src="./images/piggy.png" alt="logo"/></div>
+        
+        <nav>
+            <ul class="nav_links">
+                <li><a href="./">About</a></li>
+                <li><a href="./resources">Resources</a></li>
+                <li><a href="{{go_to}}">{{login}}</a></li>
+        
+            </ul>
+        </nav>
+    </header>
+
+    <!-- balance display -->
+	<center>
+	<div class="money_display">
+		<p id="balance_display"></p>
+		<form action="./save_earned" method="get">
+			<input type="text" id="hidden_balance" name="hidden_balance" class="hidden"></input>
+			<input type="text" id="hidden_earnings" name="hidden_earnings" class="hidden"></input>
+			<span>⠀⠀</span>
+			<button type="submit" value="submit">Save Changes</button>
+			<button class="oth_button"><a href="./spend">Spend</a></button>
+		</form>
+	</div>
+	</center>
+	<br>
+	
+    <!--    cards-->
+
+    <div class="cardbody">
+
+        <div class="grid">
+		    
+			{{#each duties}}
+				<div class="grid-item">
+					<div class="card">
+                    
+						<div class="card-content">
+							<h1 class="card-header">{{this.name}}</h1>
+							<p class="card-text">{{this.description}}
+							</p>
+							<button class="card-btn" onclick="increment_and_update('{{this.name}}', {{this.gain}})">Task Done
+								<span>&rarr;</span>
+							</button>
+    
+						</div>
+                    
+					</div>
+            </div>
+			{{/each}}
+
+
+    <!--CARDS END-->
+
+    <div class="linksandsuch">
+        <div class="links">
+            <ul class="linksheader">
+                LINKS
+                <li><a href="#about">About</a></li>
+                <li><a href="joinus">Join Us</a></li>
+    
+            </ul>
+        </div>
+        <div class="contactusinfo">
+            <ul class="Contactusheader">
+                Have Questions?
+                <li><a href="#services">
+                    Feel free to contact us anytime at 
+                    <br>dimetime@fakemail.com</a></li>
+                    <br>
+                <li>* All images from google</li>
+    
+            </ul>
+        </div>
+        <script type="text/javascript" src="./javascripts/duties.js"></script>
+    </body>
+    </html>
